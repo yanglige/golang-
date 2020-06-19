@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-
 func bubbleSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr

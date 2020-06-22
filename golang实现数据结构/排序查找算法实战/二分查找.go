@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 )
-func QuickSort(arr []int) []int {
+func QuickSort2(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
 	}
@@ -22,22 +22,31 @@ func QuickSort(arr []int) []int {
 			mid = append(mid, arr[i])
 		}
 	}
-	//fmt.Println(low)
-	//	//fmt.Println(high)
-	//	//fmt.Println(mid)
-	low, high = QuickSort(low), QuickSort(high)
-	fmt.Println("--", low)
-	fmt.Println("--", high)
-	fmt.Println(mid)
+	low, high = QuickSort2(low), QuickSort2(high)
 
 	arr = append(append(low, mid...), high...)
-	fmt.Println(append(low, mid...))
+
 
 	return arr
 }
-func main() {
-	arr := []int{1, 9, 3, 8, 2, 6, 4, 5, 7}
-	fmt.Println(QuickSort(arr))
+func bin_search(arr []int, data int) int {
+	low := 0
+	high := len(arr) - 1
+	for low <= high {
+		mid := (low + high) / 2
+		if arr[mid] > data {
+			high = mid - 1
+		}else if arr[mid] < data {
+			low = mid + 1
+		}else {
+			return mid
+		}
+	}
+	return -1
 }
 
-
+func main() {
+	arr := []int{9, 1, 3, 8, 2, 6, 4, 5, 7}
+	arr1 := QuickSort2(arr)
+	fmt.Println(bin_search(arr1, 4))
+}

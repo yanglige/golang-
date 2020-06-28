@@ -1,0 +1,2 @@
+2020/06/28 14:44:08.042 [I] [main.go:19]  init sec succ
+2020/06/28 14:44:08.167 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091

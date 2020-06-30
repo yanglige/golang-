@@ -1,36 +1,24 @@
 package main
 
 import (
+	"SecKill/SecProxy/service"
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
+	"strings"
+
 )
 
 var (
-	secKillConf = &SecSkillConf{}
+	secKillConf = &service.SecSkillConf{
+		SecProductInfoMap : make(map[int]*service.SecProductInfoConf, 1024),
+	}
 )
 
 
-type SecSkillConf struct {
-	redisConf RedisConf
-	etcdConf EtcdConf
-	logPath string
-	logLevel string
-}
-
-type RedisConf struct {
-	redisAddr string
-	redisMaxIdle int
-	redisMaxActive  int
-	redisIdleTimeout int
-}
-type EtcdConf struct {
-	etcdAddr string
-	timeout int
-}
-
 func initConfig() (err error){
 	redisAdrr := beego.AppConfig.String("redis_addr")
+	//fmt.Printf("redisAdrr%v",redisAdrr)
 	redisMaxIdle, _ := beego.AppConfig.Int("redis_max_idle")
 	redisMaxActive, _ := beego.AppConfig.Int("redis_max_active")
 	redisIdleTimeout, _ := beego.AppConfig.Int("redis_idle_timeout")
@@ -40,25 +28,45 @@ func initConfig() (err error){
 	logs.Debug("read config succ, redis addr :%v", redisAdrr)
 	logs.Debug("read config succ, etcd addr :%v", etcdAddr)
 
-	secKillConf.etcdConf.etcdAddr = etcdAddr
-	secKillConf.redisConf.redisAddr = redisAdrr
-	secKillConf.redisConf.redisMaxIdle = redisMaxIdle
-	secKillConf.redisConf.redisMaxActive = redisMaxActive
-	secKillConf.redisConf.redisIdleTimeout = redisIdleTimeout
+	secKillConf.EtcdConf.EtcdAddr = etcdAddr
+
+
+
+	secKillConf.RedisConf.RedisAddr = redisAdrr
+	secKillConf.RedisConf.RedisMaxIdle = redisMaxIdle
+	secKillConf.RedisConf.RedisMaxActive = redisMaxActive
+	secKillConf.RedisConf.RedisIdleTimeout = redisIdleTimeout
 	if len(redisAdrr) == 0 || len(etcdAddr) == 0 {
 		err = fmt.Errorf("init config failed, redis[%s] or etcd[%s] config is null", redisAdrr, etcdAddr)
 	}
 
 	etcdTimeout, err := beego.AppConfig.Int("etcd_timeout")
+	fmt.Println("timeout", etcdTimeout)
 	if err != nil {
-		err = fmt.Errorf("init config failed, read etcd_timeout err = %v", err)
+		err = fmt.Errorf("init config failed, read etcd_timeout err :%v", err)
 	}
-	secKillConf.etcdConf.timeout = etcdTimeout
+	secKillConf.EtcdConf.Timeout = etcdTimeout
+	secKillConf.EtcdConf.EtcdSecKeyPrefix = beego.AppConfig.String("etcd_sec_pre_key")
+	//fmt.Println("prefix" , secKillConf.EtcdConf.EtcdSecKeyPrefix)
+	if len(secKillConf.EtcdConf.EtcdSecKeyPrefix) == 0 {
+		err = fmt.Errorf("init config failed, read etcd_sec_pre_ key err:%v ", err)
+		return
+	}
+	productKey := beego.AppConfig.String("etcd_product_key")
+	if len(productKey) == 0 {
+		err = fmt.Errorf("init config failed, read etcd_product_key err: %v", err)
+		return
+	}
+	if strings.HasSuffix(secKillConf.EtcdConf.EtcdSecKeyPrefix, "/") == false {
+		secKillConf.EtcdConf.EtcdSecKeyPrefix = secKillConf.EtcdConf.EtcdSecKeyPrefix + "/"
+	}
+	secKillConf.EtcdConf.EtcdSecProductKey = fmt.Sprintf("%s%s", secKillConf.EtcdConf.EtcdSecKeyPrefix, productKey)
+	//fmt.Println("etcdSecProductKey:",secKillConf.EtcdConf.EtcdSecProductKey)
 
-	secKillConf.logPath = beego.AppConfig.String("log_path")
-	secKillConf.logLevel = beego.AppConfig.String("log_level")
 
-
-
+	secKillConf.LogPath = beego.AppConfig.String("log_path")
+	secKillConf.LogLevel = beego.AppConfig.String("log_level")
+	//fmt.Println("logpath", secKillConf.LogPath)
+	//fmt.Println("loglevel", secKillConf.LogLevel)
 	return
 }

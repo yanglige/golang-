@@ -1,0 +1,13 @@
+2020/06/30 09:07:45.184 [D] [init.go:131]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:31 version:2 value:"[{\"ProductId\":1028,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1027,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/06/30 09:07:45.186 [D] [init.go:131]  sec info conf is [[{1028 1593536880 1593537000 0 1000 1000} {1027 1593536880 1593537000 0 2000 1000}]]
+2020/06/30 09:07:45.187 [I] [main.go:22]  init sec succ
+2020/06/30 09:07:45.187 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/06/30 09:07:45.317 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/06/30 14:44:58.559 [D] [init.go:131]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:31 version:2 value:"[{\"ProductId\":1028,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1027,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/06/30 14:44:58.559 [D] [init.go:131]  sec info conf is [[{1028 1593536880 1593537000 0 1000 1000} {1027 1593536880 1593537000 0 2000 1000}]]
+2020/06/30 14:44:58.560 [I] [main.go:22]  init sec succ
+2020/06/30 14:44:58.561 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/06/30 14:44:58.673 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/06/30 14:46:50.562 [D] [asm_amd64.s:1357]  get config from etcd, PUT "/yanglige/backend/secskill/product" : "[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]"
+
+2020/06/30 14:46:50.562 [D] [asm_amd64.s:1357]  get config from etcd succ, [{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]

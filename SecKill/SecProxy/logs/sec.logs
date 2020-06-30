@@ -1,2 +1,12 @@
 2020/06/28 14:44:08.042 [I] [main.go:19]  init sec succ
 2020/06/28 14:44:08.167 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/06/28 17:42:41.573 [I] [main.go:19]  init sec succ
+2020/06/28 17:42:41.699 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/06/28 17:56:13.791 [I] [main.go:19]  init sec succ
+2020/06/28 17:56:13.907 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/06/28 18:02:05.497 [I] [main.go:19]  init sec succ
+2020/06/28 18:02:05.613 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/06/28 18:07:09.931 [D] [init.go:114]  key[%!s(int=0)] valued[key:"/yanglige/secskill/product" create_revision:29 mod_revision:29 version:1 value:"[{\"ProductId\":1028,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1027,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/06/28 18:07:09.931 [D] [init.go:114]  sec info conf is [[{1028 1593536880 1593537000 0 1000 1000} {1027 1593536880 1593537000 0 2000 1000}]]
+2020/06/28 18:07:09.932 [I] [main.go:19]  init sec succ
+2020/06/28 18:07:10.046 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091

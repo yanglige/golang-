@@ -13,6 +13,7 @@ require (
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	go.uber.org/zap v1.15.0 // indirect
+	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
 	google.golang.org/genproto v0.0.0-20200626011028-ee7919e894b5 // indirect
 	google.golang.org/grpc v1.30.0 // indirect
 

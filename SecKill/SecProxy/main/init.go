@@ -136,7 +136,7 @@ func initSec() (err error) {
 	}
 	fmt.Println("initSecconf succ")
 
-
+	service.InitService(secKillConf)
 	initSecProductWatch()
 
 	logs.Info("init sec succ")

@@ -11,3 +11,41 @@
 2020/06/30 14:46:50.562 [D] [asm_amd64.s:1357]  get config from etcd, PUT "/yanglige/backend/secskill/product" : "[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]"
 
 2020/06/30 14:46:50.562 [D] [asm_amd64.s:1357]  get config from etcd succ, [{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]
+2020/06/30 19:04:09.762 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/06/30 19:04:09.764 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/06/30 19:04:09.766 [I] [main.go:22]  init sec succ
+2020/06/30 19:04:09.766 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/06/30 19:04:09.912 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/01 09:40:49.177 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/07/01 09:40:49.178 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/07/01 09:40:49.181 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc000030300 1030:0xc000030300] {{0 0} 0 0 0 0}}
+2020/07/01 09:40:49.182 [I] [main.go:22]  init sec succ
+2020/07/01 09:40:49.182 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/07/01 09:40:49.319 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/01 09:41:08.791 [E] [value.go:460]  invalid request, get product_id failed, err:%v
+2020/07/01 09:41:08.791 [D] [server.go:2802]  |            ::1|[42m 200 [0m|          1ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/01 09:41:08.829 [D] [server.go:2802]  |            ::1|[43m 404 [0m|      999.9µs| nomatch|[44m GET     [0m /favicon.ico
+2020/07/01 09:52:11.722 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/07/01 09:52:11.724 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/07/01 09:52:11.725 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc0000be000 1030:0xc0000be000] {{0 0} 0 0 0 0}}
+2020/07/01 09:52:11.726 [I] [main.go:22]  init sec succ
+2020/07/01 09:52:11.727 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/07/01 09:52:11.866 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/01 09:52:17.143 [E] [value.go:460]  invalid request, get product_id failed, err:%v
+2020/07/01 09:52:17.143 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/01 09:52:32.929 [D] [server.go:2802]  |            ::1|[43m 404 [0m|     1.0005ms| nomatch|[44m GET     [0m /secinfo？product_id=1001
+2020/07/01 09:53:00.649 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/01 13:21:43.602 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/07/01 13:21:43.603 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/07/01 13:21:43.606 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc0002c6e10 1030:0xc0002c6e10] {{0 0} 0 0 0 0}}
+2020/07/01 13:21:43.606 [I] [main.go:22]  init sec succ
+2020/07/01 13:21:43.607 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/07/01 13:21:43.724 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/01 13:21:57.401 [E] [value.go:460]  invalid request, get product__id failed, err:%v
+2020/07/01 13:21:57.401 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/01 13:22:02.929 [E] [value.go:460]  invalid request, get product__id failed, err:%v
+2020/07/01 13:22:02.929 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/01 13:25:06.222 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      999.8µs|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/01 13:25:10.107 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/01 13:25:14.187 [E] [value.go:460]  invalid request, get product__id failed, err:%v
+2020/07/01 13:25:14.188 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      989.3µs|   match|[44m GET     [0m /secinfo   r:/secinfo

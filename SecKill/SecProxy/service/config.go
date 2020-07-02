@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/gomodule/redigo/redis"
 	"sync"
 	"time"
 )
@@ -12,7 +13,8 @@ const (
 
 )
 type SecSkillConf struct {
-	RedisConf      RedisConf
+	RedisBlackConf      RedisConf
+	RedisProxy2LayerConf RedisConf
 	EtcdConf       EtcdConf
 	LogPath        string
 	LogLevel       string
@@ -22,6 +24,18 @@ type SecSkillConf struct {
 	UserSecAccessLimit int
 	ReferWhiteList []string
 	IPSecAccessLimit int
+	ipBlackMap map[string]bool
+	idBlackMap map[int]bool
+	blackRedisPool *redis.Pool
+	proxy2LayerRedisPool *redis.Pool
+	secLimitMgr *SecLimitMgr
+	RWBlackLock sync.RWMutex
+
+	WriteProxy2LayerGoroutine_num int
+	ReadProxy2LayerGoroutine_num int
+
+	SecReqChan chan *SecRequest
+	SecReqChanSize int
 }
 
 type SecProductInfoConf struct {
@@ -56,4 +70,6 @@ type SecRequest struct {
 	AccessTime time.Time
 	ClientAddr string
 	ClientRefence string
+
+
 }

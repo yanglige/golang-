@@ -17,7 +17,7 @@ var (
 
 
 func initConfig() (err error){
-	redisAdrr := beego.AppConfig.String("redis_addr")
+	redisBlackAdrr := beego.AppConfig.String("redis_black_addr")
 	//fmt.Printf("redisAdrr%v",redisAdrr)
 	redisMaxIdle, _ := beego.AppConfig.Int("redis_max_idle")
 	redisMaxActive, _ := beego.AppConfig.Int("redis_max_active")
@@ -25,19 +25,19 @@ func initConfig() (err error){
 	etcdAddr := beego.AppConfig.String("etcd_addr")
 
 
-	logs.Debug("read config succ, redis addr :%v", redisAdrr)
+	logs.Debug("read config succ, redis addr :%v", redisBlackAdrr)
 	logs.Debug("read config succ, etcd addr :%v", etcdAddr)
 
 	secKillConf.EtcdConf.EtcdAddr = etcdAddr
 
 
 
-	secKillConf.RedisConf.RedisAddr = redisAdrr
-	secKillConf.RedisConf.RedisMaxIdle = redisMaxIdle
-	secKillConf.RedisConf.RedisMaxActive = redisMaxActive
-	secKillConf.RedisConf.RedisIdleTimeout = redisIdleTimeout
-	if len(redisAdrr) == 0 || len(etcdAddr) == 0 {
-		err = fmt.Errorf("init config failed, redis[%s] or etcd[%s] config is null", redisAdrr, etcdAddr)
+	secKillConf.RedisBlackConf.RedisAddr = redisBlackAdrr
+	secKillConf.RedisBlackConf.RedisMaxIdle = redisMaxIdle
+	secKillConf.RedisBlackConf.RedisMaxActive = redisMaxActive
+	secKillConf.RedisBlackConf.RedisIdleTimeout = redisIdleTimeout
+	if len(redisBlackAdrr) == 0 || len(etcdAddr) == 0 {
+		err = fmt.Errorf("init config failed, redis[%s] or etcd[%s] config is null", redisBlackAdrr, etcdAddr)
 	}
 
 	etcdTimeout, err := beego.AppConfig.Int("etcd_timeout")
@@ -87,6 +87,41 @@ func initConfig() (err error){
 		return
 	}
 	secKillConf.IPSecAccessLimit = ipLimit
+
+
+
+
+
+	redisProxy2LayerAdrr := beego.AppConfig.String("redis_proxy2layer_addr")
+	//fmt.Printf("redisAdrr%v",redisAdrr)
+	redisProxy2LayerIdle, _ := beego.AppConfig.Int("redis_proxy2layer_idle")
+	redisProxy2LayerActive, _ := beego.AppConfig.Int("redis_proxy2layer_active")
+	redisProxy2LayerIdleTimeout, _ := beego.AppConfig.Int("redis_proxy2layer_idle_timeout")
+
+
+
+	logs.Debug("read config succ, redis addr :%v", redisProxy2LayerAdrr)
+
+
+	secKillConf.RedisProxy2LayerConf.RedisAddr = redisBlackAdrr
+	secKillConf.RedisProxy2LayerConf.RedisMaxIdle = redisProxy2LayerIdle
+	secKillConf.RedisProxy2LayerConf.RedisMaxActive = redisProxy2LayerActive
+	secKillConf.RedisProxy2LayerConf.RedisIdleTimeout = redisProxy2LayerIdleTimeout
+
+
+	writeGoNums, err := beego.AppConfig.Int("write_proxy2layer_goroutine_num")
+	if err != nil {
+		logs.Debug("read writegonums err :%v", err)
+		return
+	}
+	secKillConf.WriteProxy2LayerGoroutine_num = writeGoNums
+	readGoNums, err := beego.AppConfig.Int("write_proxy2layer_goroutine_num")
+	if err != nil {
+		logs.Debug("read readgonums err :%v", err)
+		return
+	}
+	secKillConf.ReadProxy2LayerGoroutine_num = readGoNums
+
 	return
 
 }

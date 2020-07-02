@@ -10,10 +10,7 @@ import (
 var (
 	secSkillConf *SecSkillConf
 )
-func InitService(serviceConf *SecSkillConf) {
-	secSkillConf = serviceConf
-	logs.Debug("init service succ, config:%v", secSkillConf)
-}
+
 
 func SecInfoList() (data []map[string]interface{}, code int, err error) {
 	secSkillConf.RWSecProductLock.RLock()
@@ -63,6 +60,18 @@ func SecKill(req *SecRequest) (data []map[string]interface{}, code int, err erro
 		return
 	}
 
+
+
+	data, code, err = SecInfoById(req.ProductId)
+	if err != nil {
+		logs.Warn("userId[%d] secInfoBy Id failed, req[%v]", req.UserId, req)
+		return
+	}
+	if code != 0 {
+		logs.Warn("userId[%d] secInfoByid failed, code[%d] req[%v]", req.UserId, code, req)
+		return
+	}
+	secSkillConf.SecReqChan <- req
 	return
 }
 
@@ -109,6 +118,7 @@ func SecInfoById(productId int) (data map[string]interface{}, code int, err erro
 		start = false
 		end = false
 		status = "sec kill is not start"
+		code = ErrActiveNotStart
 	}
 	if now - v.StartTime > 0 {
 		start =  true
@@ -117,11 +127,13 @@ func SecInfoById(productId int) (data map[string]interface{}, code int, err erro
 		start = false
 		end = true
 		status = "sec kill is already end"
+		code = ErrActiveAlreadyEnd
 	}
 	if v.Status == ProductStatusForceSaleOut || v.Status == ProductStatusForceSaleOut {
 		start = false
 		end = true
 		status = "product is sale out"
+		code = ErrActiveSaleOut
 	}
 	data = make(map[string]interface{})
 	data["product_Id"] = productId

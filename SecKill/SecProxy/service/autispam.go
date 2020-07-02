@@ -53,7 +53,7 @@ func antiSpam(req *SecRequest) (err error) {
 	count := secLimit.Count(req.AccessTime.Unix())
 	ipLimit, ok := secLimitMgr.IpLimitMap[req.ClientAddr]
 	if !ok {
-		secLimit = &SecLimit{}
+		ipLimit = &SecLimit{}
 		secLimitMgr.IpLimitMap[req.ClientAddr] = ipLimit
 	}
 	count = secLimit.Count(req.AccessTime.Unix())

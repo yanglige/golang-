@@ -1,11 +1,15 @@
 package service
 
-import "sync"
+import (
+	"sync"
+	"time"
+)
 
 const (
 	ProductStatusNormal = 0
 	ProductStatusSaleOut = 1
 	ProductStatusForceSaleOut = 2
+
 )
 type SecSkillConf struct {
 	RedisConf      RedisConf
@@ -14,6 +18,10 @@ type SecSkillConf struct {
 	LogLevel       string
 	SecProductInfoMap map[int]*SecProductInfoConf
 	RWSecProductLock sync.RWMutex
+	CookieSecretKey string
+	UserSecAccessLimit int
+	ReferWhiteList []string
+	IPSecAccessLimit int
 }
 
 type SecProductInfoConf struct {
@@ -37,3 +45,15 @@ type EtcdConf struct {
 	EtcdSecProductKey string
 }
 
+type SecRequest struct {
+	ProductId int
+	Source string
+	AuthCode string
+	SecTime string
+	Nance string
+	UserId int
+	UserAuthSign string
+	AccessTime time.Time
+	ClientAddr string
+	ClientRefence string
+}

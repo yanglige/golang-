@@ -1,51 +1,197 @@
-2020/06/30 09:07:45.184 [D] [init.go:131]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:31 version:2 value:"[{\"ProductId\":1028,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1027,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
-2020/06/30 09:07:45.186 [D] [init.go:131]  sec info conf is [[{1028 1593536880 1593537000 0 1000 1000} {1027 1593536880 1593537000 0 2000 1000}]]
-2020/06/30 09:07:45.187 [I] [main.go:22]  init sec succ
-2020/06/30 09:07:45.187 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
-2020/06/30 09:07:45.317 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
-2020/06/30 14:44:58.559 [D] [init.go:131]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:31 version:2 value:"[{\"ProductId\":1028,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1027,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
-2020/06/30 14:44:58.559 [D] [init.go:131]  sec info conf is [[{1028 1593536880 1593537000 0 1000 1000} {1027 1593536880 1593537000 0 2000 1000}]]
-2020/06/30 14:44:58.560 [I] [main.go:22]  init sec succ
-2020/06/30 14:44:58.561 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
-2020/06/30 14:44:58.673 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
-2020/06/30 14:46:50.562 [D] [asm_amd64.s:1357]  get config from etcd, PUT "/yanglige/backend/secskill/product" : "[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]"
-
-2020/06/30 14:46:50.562 [D] [asm_amd64.s:1357]  get config from etcd succ, [{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]
-2020/06/30 19:04:09.762 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
-2020/06/30 19:04:09.764 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
-2020/06/30 19:04:09.766 [I] [main.go:22]  init sec succ
-2020/06/30 19:04:09.766 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
-2020/06/30 19:04:09.912 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
-2020/07/01 09:40:49.177 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
-2020/07/01 09:40:49.178 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
-2020/07/01 09:40:49.181 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc000030300 1030:0xc000030300] {{0 0} 0 0 0 0}}
-2020/07/01 09:40:49.182 [I] [main.go:22]  init sec succ
-2020/07/01 09:40:49.182 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
-2020/07/01 09:40:49.319 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
-2020/07/01 09:41:08.791 [E] [value.go:460]  invalid request, get product_id failed, err:%v
-2020/07/01 09:41:08.791 [D] [server.go:2802]  |            ::1|[42m 200 [0m|          1ms|   match|[44m GET     [0m /secinfo   r:/secinfo
-2020/07/01 09:41:08.829 [D] [server.go:2802]  |            ::1|[43m 404 [0m|      999.9µs| nomatch|[44m GET     [0m /favicon.ico
-2020/07/01 09:52:11.722 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
-2020/07/01 09:52:11.724 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
-2020/07/01 09:52:11.725 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc0000be000 1030:0xc0000be000] {{0 0} 0 0 0 0}}
-2020/07/01 09:52:11.726 [I] [main.go:22]  init sec succ
-2020/07/01 09:52:11.727 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
-2020/07/01 09:52:11.866 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
-2020/07/01 09:52:17.143 [E] [value.go:460]  invalid request, get product_id failed, err:%v
-2020/07/01 09:52:17.143 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
-2020/07/01 09:52:32.929 [D] [server.go:2802]  |            ::1|[43m 404 [0m|     1.0005ms| nomatch|[44m GET     [0m /secinfo？product_id=1001
-2020/07/01 09:53:00.649 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
-2020/07/01 13:21:43.602 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:32 version:3 value:"[{\"ProductId\":1030,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
-2020/07/01 13:21:43.603 [D] [init.go:132]  sec info conf is [[{1030 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
-2020/07/01 13:21:43.606 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc0002c6e10 1030:0xc0002c6e10] {{0 0} 0 0 0 0}}
-2020/07/01 13:21:43.606 [I] [main.go:22]  init sec succ
-2020/07/01 13:21:43.607 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
-2020/07/01 13:21:43.724 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
-2020/07/01 13:21:57.401 [E] [value.go:460]  invalid request, get product__id failed, err:%v
-2020/07/01 13:21:57.401 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
-2020/07/01 13:22:02.929 [E] [value.go:460]  invalid request, get product__id failed, err:%v
-2020/07/01 13:22:02.929 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
-2020/07/01 13:25:06.222 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      999.8µs|   match|[44m GET     [0m /secinfo   r:/secinfo
-2020/07/01 13:25:10.107 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /secinfo   r:/secinfo
-2020/07/01 13:25:14.187 [E] [value.go:460]  invalid request, get product__id failed, err:%v
-2020/07/01 13:25:14.188 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      989.3µs|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:31:18.400 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:18.401 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:18.401 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:18.402 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:18.403 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9994ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:31:20.284 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:20.284 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:20.285 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:20.285 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:20.286 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0002ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:31:20.836 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:20.837 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:20.837 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:20.838 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:20.839 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.0008ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:31:20.996 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:20.996 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:20.997 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:20.998 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:20.999 [D] [server.go:2802]  |            ::1|[42m 200 [0m|          3ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:31:21.148 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:21.148 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:21.149 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:21.149 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:21.150 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      2.001ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:31:21.308 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:21.308 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:21.309 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:31:21.309 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030420 1031:0xc000030420]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:31:21.310 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0005ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:15.741 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:33 version:4 value:"[{\"ProductId\":1031,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/07/02 11:34:15.742 [D] [init.go:132]  sec info conf is [[{1031 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/07/02 11:34:15.742 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc0002c6e70 1031:0xc0002c6e40] {{0 0} 0 0 0 0}}
+2020/07/02 11:34:15.744 [I] [main.go:22]  init sec succ
+2020/07/02 11:34:15.745 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/07/02 11:34:15.856 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/02 11:34:20.816 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:20.816 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:20.817 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:20.818 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:20.819 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9998ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:21.407 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:21.407 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:21.408 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:21.408 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:21.409 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.9999ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:21.583 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:21.584 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:21.584 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:21.585 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:21.585 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0008ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:22.495 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:22.496 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:22.496 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:22.497 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:22.498 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.0022ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:22.663 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:22.663 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:22.664 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:22.664 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:22.665 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0014ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:22.815 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:22.815 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:22.816 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:22.816 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:22.817 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0012ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:22.983 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:22.983 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:22.984 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:22.984 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:22.985 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0008ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:23.368 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:23.368 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:23.369 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:23.369 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:23.370 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0016ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:23.536 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:23.536 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:23.537 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:23.538 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:23.539 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.0015ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:23.688 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:23.688 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:23.689 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:23.689 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:23.690 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0014ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:23.834 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:23.834 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:23.835 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:23.835 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:23.836 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      2.001ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:24.000 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:24.000 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:24.001 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:24.001 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:24.002 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0009ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:24.256 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:24.256 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:24.257 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:24.258 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:24.259 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.0017ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:24.434 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:24.434 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:24.435 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:24.435 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:24.436 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0015ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:24.595 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:24.595 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:24.596 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:24.596 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:24.597 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.9999ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 11:34:24.792 [D] [skill.go:27]  get product[1031]
+2020/07/02 11:34:24.792 [D] [skill.go:27]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 11:34:24.793 [D] [skill.go:27]  get product[1029]
+2020/07/02 11:34:24.794 [D] [skill.go:27]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc0002c6e70 1031:0xc0002c6e40]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 11:34:24.795 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.0021ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 12:30:27.619 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:33 version:4 value:"[{\"ProductId\":1031,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/07/02 12:30:27.619 [D] [init.go:132]  sec info conf is [[{1031 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/07/02 12:30:27.620 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc000030330 1031:0xc000030300] {{0 0} 0 0 0 0} tyP87zZKzITuzaUjhmbqhNIDnyg6f2KP}
+2020/07/02 12:30:27.622 [I] [main.go:22]  init sec succ
+2020/07/02 12:30:27.622 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/07/02 12:30:27.733 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/02 12:30:34.659 [D] [skill.go:63]  get product[1029]
+2020/07/02 12:30:34.660 [D] [skill.go:63]  get product[1029], result[map[end:true product_Id:1029 start:false status:sec kill is already end]], all[map[1029:0xc000030330 1031:0xc000030300]], v[&{1029 1593536880 1593537000 0 2000 1000}]
+2020/07/02 12:30:34.660 [D] [skill.go:63]  get product[1031]
+2020/07/02 12:30:34.661 [D] [skill.go:63]  get product[1031], result[map[end:true product_Id:1031 start:false status:sec kill is already end]], all[map[1029:0xc000030330 1031:0xc000030300]], v[&{1031 1593536880 1593537000 0 1000 1000}]
+2020/07/02 12:30:34.661 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      2.001ms|   match|[44m GET     [0m /secinfo   r:/secinfo
+2020/07/02 12:30:40.008 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 12:31:49.608 [W] [skill.go:42]  userId[%!d(string=)] invalid, check failed, req[&{1021      }]
+2020/07/02 12:31:49.608 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:54:20.856 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:33 version:4 value:"[{\"ProductId\":1031,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/07/02 14:54:20.856 [D] [init.go:132]  sec info conf is [[{1031 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/07/02 14:54:20.859 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc000030510 1031:0xc0000304e0] {{0 0} 0 0 0 0} tyP87zZKzITuzaUjhmbqhNIDnyg6f2KP 1}
+2020/07/02 14:54:20.860 [I] [main.go:22]  init sec succ
+2020/07/02 14:54:20.860 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/07/02 14:54:20.982 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/02 14:57:51.402 [D] [init.go:132]  key[%!s(int=0)] valued[key:"/yanglige/backend/secskill/product" create_revision:30 mod_revision:33 version:4 value:"[{\"ProductId\":1031,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":1000,\"LeftCount\":1000},{\"ProductId\":1029,\"StartTime\":1593536880,\"EndTime\":1593537000,\"Status\":0,\"TotalCount\":2000,\"LeftCount\":1000}]" ]
+2020/07/02 14:57:51.403 [D] [init.go:132]  sec info conf is [[{1031 1593536880 1593537000 0 1000 1000} {1029 1593536880 1593537000 0 2000 1000}]]
+2020/07/02 14:57:51.403 [D] [init.go:139]  init service succ, config:&{{127.0.0.1:6379 0 0 0} {127.0.0.1:2379 5 /yanglige/backend/secskill/ /yanglige/backend/secskill/product} ./logs/sec.log debug map[1029:0xc000030510 1031:0xc0000304e0] {{0 0} 0 0 0 0} tyP87zZKzITuzaUjhmbqhNIDnyg6f2KP 1}
+2020/07/02 14:57:51.404 [I] [main.go:22]  init sec succ
+2020/07/02 14:57:51.404 [D] [asm_amd64.s:1357]  begin watch key:/yanglige/backend/secskill/product
+2020/07/02 14:57:51.526 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9091
+2020/07/02 14:57:55.493 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:57.868 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:58.027 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:58.187 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:58.1870389 +0800 CST m=+66.820633501}]
+2020/07/02 14:58:58.187 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:58.553 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:58.5531276 +0800 CST m=+67.186722201}]
+2020/07/02 14:58:58.553 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:58.721 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:58.7211661 +0800 CST m=+67.354760701}]
+2020/07/02 14:58:58.721 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:59.067 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:59.209 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:59.2092766 +0800 CST m=+67.842871201}]
+2020/07/02 14:58:59.209 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:59.347 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:59.3473138 +0800 CST m=+67.980908401}]
+2020/07/02 14:58:59.347 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:59.497 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:59.4973471 +0800 CST m=+68.130941701}]
+2020/07/02 14:58:59.497 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:59.626 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:59.626379 +0800 CST m=+68.259973601}]
+2020/07/02 14:58:59.627 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      1.001ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:58:59.777 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:58:59.7774139 +0800 CST m=+68.411008501}]
+2020/07/02 14:58:59.777 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:00.329 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:00.497 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:00.4976034 +0800 CST m=+69.131198001}]
+2020/07/02 14:59:00.497 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:00.697 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:00.6976494 +0800 CST m=+69.331244001}]
+2020/07/02 14:59:00.697 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:00.849 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:00.8496839 +0800 CST m=+69.483278501}]
+2020/07/02 14:59:00.849 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:01.009 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:01.153 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:01.1537581 +0800 CST m=+69.787352701}]
+2020/07/02 14:59:01.154 [D] [server.go:2802]  |            ::1|[42m 200 [0m|          1ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:01.737 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:01.7378752 +0800 CST m=+70.371469801}]
+2020/07/02 14:59:01.737 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:03.010 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:04.234 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:04.882 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:04.8824781 +0800 CST m=+73.516072701}]
+2020/07/02 14:59:04.883 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      998.4µs|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:06.626 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:06.794 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:06.7949726 +0800 CST m=+75.428567201}]
+2020/07/02 14:59:06.794 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0013ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:06.946 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:06.9460063 +0800 CST m=+75.579600901}]
+2020/07/02 14:59:06.947 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0008ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:07.082 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:07.218 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:07.2180679 +0800 CST m=+75.851662501}]
+2020/07/02 14:59:07.219 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0007ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:07.354 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:07.354099 +0800 CST m=+75.987693601}]
+2020/07/02 14:59:07.355 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0006ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:07.498 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:07.4981516 +0800 CST m=+76.131746201}]
+2020/07/02 14:59:07.499 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0005ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:07.626 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:07.6261822 +0800 CST m=+76.259776801}]
+2020/07/02 14:59:07.627 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0008ms|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:07.778 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:07.7782807 +0800 CST m=+76.411875301}]
+2020/07/02 14:59:07.778 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:07.931 [W] [skill.go:50]  userId[0] invalid, userserviceBusy, req[&{1021     0  2020-07-02 14:59:07.9313152 +0800 CST m=+76.564909801}]
+2020/07/02 14:59:07.931 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill
+2020/07/02 14:59:08.066 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /seckill   r:/seckill

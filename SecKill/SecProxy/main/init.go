@@ -80,14 +80,14 @@ func initLogger() (err error) {
 }
 
 func loadSecConf() (err error) {
-	fmt.Println("begin loadsecconf")
+	//fmt.Println("begin loadsecconf")
 	//key := fmt.Sprintf("%s/product", secKillConf.etcdConf.etcdSecKey)
 	resp, err := etcdClient.Get(context.Background(), secKillConf.EtcdConf.EtcdSecProductKey)
 	if err != nil {
 		logs.Error("get [%s] from etcd failed, err :%v", secKillConf.EtcdConf.EtcdSecProductKey, err)
 		return
 	}
-	fmt.Println("---------------")
+	//fmt.Println("---------------")
 	var secProductInfo []service.SecProductInfoConf
 
 	for k,v := range resp.Kvs {
@@ -99,14 +99,14 @@ func loadSecConf() (err error) {
 		}
 		logs.Debug("sec info conf is [%v]", secProductInfo)
 	}
-	fmt.Println("+++++++++++++")
-	//updateSecProductInfo(secProductInfo)
+	//fmt.Println("+++++++++++++")
+	updateSecProductInfo(secProductInfo)
 
-	secKillConf.RWSecProductLock.Lock()
-	for _, v := range secProductInfo {
-		secKillConf.SecProductInfoMap[v.ProductId] = &v
-	}
-	secKillConf.RWSecProductLock.Unlock()
+	//secKillConf.RWSecProductLock.Lock()
+	//for _, v := range secProductInfo {
+	//	secKillConf.SecProductInfoMap[v.ProductId] = &v
+	//}
+	//secKillConf.RWSecProductLock.Unlock()
 	return
 }
 func initSec() (err error) {
@@ -193,13 +193,13 @@ func updateSecProductInfo(secProductInfo []service.SecProductInfoConf) {
 	// 优化加锁效率低的方法：
 	var tmp map[int]*service.SecProductInfoConf = make(map[int]*service.SecProductInfoConf, 1024)
 	for _, v := range secProductInfo {
-		tmp[v.ProductId] = &v
+		productInfo := v
+
+		tmp[v.ProductId] = &productInfo
 	}
 	secKillConf.RWSecProductLock.Lock()
 	secKillConf.SecProductInfoMap = tmp
 	secKillConf.RWSecProductLock.Unlock()
-
-
 }
 
 

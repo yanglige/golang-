@@ -68,5 +68,25 @@ func initConfig() (err error){
 	secKillConf.LogLevel = beego.AppConfig.String("log_level")
 	//fmt.Println("logpath", secKillConf.LogPath)
 	//fmt.Println("loglevel", secKillConf.LogLevel)
+
+	secKillConf.CookieSecretKey = beego.AppConfig.String("cookie_secretkey")
+	secLimit, err := beego.AppConfig.Int("user_sec_access_limit")
+	if err != nil {
+		err = fmt.Errorf("init config failed, read user_sec_access_limit err :%v", err)
+		return
+	}
+	secKillConf.UserSecAccessLimit =secLimit
+	referList := beego.AppConfig.String("refer_whitelist")
+	if len(referList) > 0 {
+		secKillConf.ReferWhiteList = strings.Split(referList, ",")
+	}
+
+	ipLimit, err := beego.AppConfig.Int("ip_sec_access_limit")
+	if err != nil {
+		err = fmt.Errorf("init config failed, read ip_sec_access_limit err :%v", err)
+		return
+	}
+	secKillConf.IPSecAccessLimit = ipLimit
 	return
+
 }
